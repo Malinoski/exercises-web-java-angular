@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link href="resources/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body ng-app="MyApp">
+	<div ng-controller="MainController as mainController">
+
+		<div class="container">
+			<div class="jumbotron">
+				<div style="text-align: center">
+					<h1>Hi</h1>
+				</div>								
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Some Form {{mainController.aa}}					
+				</div>
+				<div class="panel-body">
+					<div class="row">
+
+						<div class="col-lg-6">
+							<form role="form">
+								<div class="form-group">
+									<p>
+										<label>Name</label> 
+										<input class="form-control" placeholder="Enter name" ng-model="mainController.user.name"> 
+									</p>
+									<p>
+										<label>Phone</label> 
+										<input class="form-control" placeholder="Enter phone" ng-model="mainController.user.phone">
+									</p>
+									<p>
+										<label>Description</label> 
+										<textarea rows="4" class="form-control" placeholder="Enter text" ng-model="mainController.user.description"></textarea>
+									</p>
+									<button type="submit" class="btn btn-default" ng-click="mainController.save()">Send</button>
+								</div>
+								
+							</form>
+						</div>
+						<div class="col-lg-6">
+							<div class="panel panel-default">
+		                        <div class="panel-heading">
+		                            Hover Rows
+		                        </div>
+		                        <!-- /.panel-heading -->
+		                        <div class="panel-body">
+		                            <div class="table-responsive">
+		                                <table class="table table-hover">
+		                                    <thead>
+		                                        <tr>
+		                                            <th>#</th>
+		                                            <th>First Name</th>
+		                                            <th>Last Name</th>
+		                                            <th>Username</th>
+		                                        </tr>
+		                                    </thead>
+		                                    <tbody ng-repeat="user in mainController.users">
+		                                        <tr>
+		                                            <td>{{user.id}}</td>
+		                                            <td>{{user.name}}</td>
+		                                            <td>{{user.phone}}</td>
+		                                            <td>{{user.description}}</td>
+		                                        </tr>
+		                                        
+		                                    </tbody>
+		                                </table>
+		                            </div>
+		                            <!-- /.table-responsive -->
+		                        </div>
+		                        <!-- /.panel-body -->
+		                    </div>
+						</div>
+					</div>
+					<!-- /.row (nested) -->
+				</div>
+				<!-- /.panel-body -->
+			</div>
+			<div></div>
+
+			<script src="resources/angular.min.js"></script>
+			<script src="resources/jquery.min.js"></script>
+			<script src="resources/bootstrap.min.js"></script>
+			<script src="controller/controller.js"></script>
+</body>
+</html>
