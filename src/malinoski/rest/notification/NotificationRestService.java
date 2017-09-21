@@ -21,7 +21,7 @@ public class NotificationRestService {
     
     @GET
     @Path("{id: \\d+}")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_XML)
     public Notification fetchBy(@PathParam("id") int id) {
         // fetch notification by id
         return new Notification(id, "Rise and shine.");
