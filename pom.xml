@@ -6,21 +6,20 @@
   <packaging>war</packaging>
   
   <dependencies>
+  
+    <!-- JUnit -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- Jersey -->
 	<dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-servlet</artifactId>
         <version>1.17</version>
-    </dependency>
-	<dependency>
-        <groupId>javax.ws.rs</groupId>
-        <artifactId>jsr311-api</artifactId>
-        <version>1.1.1</version>
     </dependency>
 	<dependency>
 		<groupId>com.sun.jersey</groupId>
@@ -32,11 +31,20 @@
         <artifactId>jersey-client</artifactId>
         <version>1.17</version>
     </dependency>
+	
+	<!-- Just for eclipse identify JSP -->
     <dependency>
 	    <groupId>javax.servlet</groupId>
 	    <artifactId>javax.servlet-api</artifactId>
 	    <version>3.1.0</version>
 	    <scope>provided</scope>
+	</dependency>	
+	
+	<!-- Just for eclipse find javax.xml.bind.annotation.* packages -->
+	<dependency>
+	    <groupId>javax.xml.bind</groupId>
+	    <artifactId>jaxb-api</artifactId>
+	    <version>2.3.0</version>
 	</dependency>
 	
   </dependencies>
