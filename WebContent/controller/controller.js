@@ -25,21 +25,20 @@ angular.module("MyApp", ['ngSanitize'])
 				url: urlBase+'rest/notifications/123' 
 			}).then(function successCallback(response){
 				console.log("ok");
-				console.log(response);
+				console.log(response);				
+				
 			}, function errorCallback(response){
 				console.log("error");
 				console.log(response);
 				
-				self.showError(response.data);				 
+				self.showHTMLResponse(response.data);				 
 			});
 		};
 		
-		self.showError = function($htmlError){
-			self.errorContent = $htmlError;
-			//self.errorContent = "<b>oi</b>";
-			$("#errorModal").modal("show");
+		self.showHTMLResponse = function($html){
+			self.hmlResponse = $html;
+			$("#hmlResponseModal").modal("show");
 		}
 		
-		
-		
-	});
+	}
+);
